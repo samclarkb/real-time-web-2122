@@ -42,3 +42,11 @@ if (window.location.pathname === '/chat') {
 		window.scrollTo(0, document.body.scrollHeight)
 	})
 }
+
+var cards = document.querySelectorAll('.card')
+
+cards.forEach(card => {
+	card.addEventListener('click', function () {
+		card.classList.toggle('is-flipped')
+	})
+})

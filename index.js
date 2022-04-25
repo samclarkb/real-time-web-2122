@@ -5,6 +5,7 @@ const http = require('http')
 const server = http.createServer(app)
 const { Server } = require('socket.io')
 const io = new Server(server)
+const fetch = require('node-fetch')
 
 app.set('view engine', 'ejs')
 
@@ -16,11 +17,24 @@ app.get('/', (req, res) => {
 
 app.get('/chat', (req, res) => {
 	const nickname = req.query.nickname
-	// console.log(nickname)
-	res.render('chat', {
-		nickname,
-	})
+	fetch(`https://naruto-api.herokuapp.com/api/v1/characters`)
+		.then(res => res.json())
+		.then(data => {
+			naam(data)
+			res.render('chat', {
+				nickname,
+			})
+		})
 })
+
+const naam = data => {
+	data.forEach(data => {
+		console.log('Dit is ' + data.name)
+	})
+	// data.name.forEach(data => {
+	// 	console.log('Dit is' + data.name)
+	// })
+}
 
 io.on('connection', socket => {
 	// console.log(socket.nickname, 'lol')
