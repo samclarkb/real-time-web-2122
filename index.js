@@ -32,6 +32,7 @@ const naam = data => {
 	data.forEach(data => {
 		console.log(data.name)
 	})
+	data.name.replace('_', '')
 	// data.name.forEach(data => {
 	// 	console.log('Dit is' + data.name)
 	// })

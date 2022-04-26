@@ -118,15 +118,21 @@ body {
 	color: black;
 	text-align: center;
 	font-weight: bold;
-	font-size: 0.5em;
+	font-size: 0.25em;
 	backface-visibility: hidden;
-	border-radius: 0.5em;
+	border-radius: 1em;
 	background-color: white;
-	box-shadow: 0.15em 0.15em 0.15em rgba(0, 0, 0, 0.25);
+	box-shadow: 0.5em 0.5em 0.25em rgba(0, 0, 0, 0.25);
 }
 
 .card__face p {
 	background-color: white;
+	width: 100%;
+	padding: 0.5em 0;
+	border-bottom-left-radius: 1em;
+	border-bottom-right-radius: 1em;
+	transform: translateY(1em);
+	/* box-shadow: 0.25em 0.25em 0.15em rgba(0, 0, 0, 0.25); */
 }
 
 .card__face--front {
