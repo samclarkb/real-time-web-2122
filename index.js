@@ -20,17 +20,16 @@ app.get('/chat', (req, res) => {
 	fetch(`https://naruto-api.herokuapp.com/api/v1/characters`)
 		.then(res => res.json())
 		.then(data => {
-			names(data)
 			res.render('chat', {
 				nickname,
-				data: data,
+				data: names(data),
 			})
 		})
 })
 
 const names = data => {
 	const filterdNames = data.map(item => {
-		console.log(item.name.replace('_', ' '))
+		console.log('name', item.name)
 		return {
 			...item, // spread entire object
 			name: item.name.replace('_', ' '),
