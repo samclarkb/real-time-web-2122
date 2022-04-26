@@ -3,10 +3,10 @@ const chatForm = document.getElementById('chat')
 const nicknameForm = document.getElementById('nickname')
 const input = document.getElementById('input')
 const nicknameInput = document.getElementById('nickname-input')
+const feedback = document.getElementById('feedback')
+const username = new URLSearchParams(window.location.search).get('nickname')
 
 if (window.location.pathname === '/chat') {
-	const username = new URLSearchParams(window.location.search).get('nickname')
-
 	chatForm.addEventListener('submit', event => {
 		event.preventDefault()
 		if (input.value) {
@@ -16,6 +16,25 @@ if (window.location.pathname === '/chat') {
 			})
 			input.value = ''
 		}
+	})
+
+	let isUserTyping = false
+	input.addEventListener('keyup', function () {
+		const value = input.value
+		if (value && !isUserTyping) {
+			isUserTyping = true
+			socket.emit('typing', username)
+		} else if (!value && isUserTyping) {
+			isUserTyping = false
+			socket.emit('stop-typing', username)
+		}
+	})
+
+	socket.on('typing', function (data) {
+		if (username == data) {
+			return
+		}
+		feedback.innerHTML = data + ' is typing..'
 	})
 
 	console.log(username)

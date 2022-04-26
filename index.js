@@ -22,7 +22,7 @@ app.get('/chat', (req, res) => {
 		.then(data => {
 			res.render('chat', {
 				nickname,
-				data: names(data),
+				data: names(data).slice(18, 39),
 			})
 		})
 })
@@ -41,6 +41,10 @@ const names = data => {
 io.on('connection', socket => {
 	// console.log(socket.nickname, 'lol')
 	io.emit('connected', 'a user has connected')
+
+	socket.on('typing', function (data) {
+		io.emit('typing', data)
+	})
 
 	socket.on('disconnect', () => {
 		io.emit('disconnected', 'a user has disconnected')
