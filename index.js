@@ -23,13 +23,14 @@ app.get('/chat', (req, res) => {
 			naam(data)
 			res.render('chat', {
 				nickname,
+				data: { data },
 			})
 		})
 })
 
 const naam = data => {
 	data.forEach(data => {
-		console.log('Dit is ' + data.name)
+		console.log(data.name)
 	})
 	// data.name.forEach(data => {
 	// 	console.log('Dit is' + data.name)

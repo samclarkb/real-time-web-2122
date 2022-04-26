@@ -117,7 +117,7 @@ body {
 	border-radius: 0.5em;
 	/* padding: 0.5em; */
 	background-color: white;
-	box-shadow: 0.2em 0.2em rgba(0, 0, 0, 0.05);
+	box-shadow: 0.15em 0.15em 0.15em rgba(0, 0, 0, 0.25);
 }
 
 .card__face--front {
