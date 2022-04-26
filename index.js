@@ -23,7 +23,7 @@ app.get('/chat', (req, res) => {
 			naam(data)
 			res.render('chat', {
 				nickname,
-				data: { data },
+				data: data,
 			})
 		})
 })

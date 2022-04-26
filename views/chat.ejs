@@ -7,104 +7,17 @@
 				<% data.forEach(data => {%>
 				<article class="scene scene--card">
 					<div class="card">
-						<div class="card__face card__face--front">
+						<div
+							class="card__face card__face--front"
+							style="background-image: url(<%=data.images[0] %>)"
+						>
 							<p><%= data.name %></p>
+							<!-- <img src="<%=data.images[0] %>" alt="" /> -->
 						</div>
-						<img src="<%=data.images[0] %>" alt="" />
-						<div class="card__face card__face--back">back</div>
+						<div class="card__face card__face--back"></div>
 					</div>
 				</article>
 				<%})%>
-				<article class="scene scene--card">
-					<div class="card">
-						<div class="card__face card__face--front">front</div>
-						<div class="card__face card__face--back">back</div>
-					</div>
-				</article>
-				<article class="scene scene--card">
-					<div class="card">
-						<div class="card__face card__face--front">front</div>
-						<div class="card__face card__face--back">back</div>
-					</div>
-				</article>
-				<article class="scene scene--card">
-					<div class="card">
-						<div class="card__face card__face--front">front</div>
-						<div class="card__face card__face--back">back</div>
-					</div>
-				</article>
-				<article class="scene scene--card">
-					<div class="card">
-						<div class="card__face card__face--front">front</div>
-						<div class="card__face card__face--back">back</div>
-					</div>
-				</article>
-				<article class="scene scene--card">
-					<div class="card">
-						<div class="card__face card__face--front">front</div>
-						<div class="card__face card__face--back">back</div>
-					</div>
-				</article>
-				<article class="scene scene--card">
-					<div class="card">
-						<div class="card__face card__face--front">front</div>
-						<div class="card__face card__face--back">back</div>
-					</div>
-				</article>
-				<article class="scene scene--card">
-					<div class="card">
-						<div class="card__face card__face--front">front</div>
-						<div class="card__face card__face--back">back</div>
-					</div>
-				</article>
-				<article class="scene scene--card">
-					<div class="card">
-						<div class="card__face card__face--front">front</div>
-						<div class="card__face card__face--back">back</div>
-					</div>
-				</article>
-				<article class="scene scene--card">
-					<div class="card">
-						<div class="card__face card__face--front">front</div>
-						<div class="card__face card__face--back">back</div>
-					</div>
-				</article>
-				<article class="scene scene--card">
-					<div class="card">
-						<div class="card__face card__face--front">front</div>
-						<div class="card__face card__face--back">back</div>
-					</div>
-				</article>
-				<article class="scene scene--card">
-					<div class="card">
-						<div class="card__face card__face--front">front</div>
-						<div class="card__face card__face--back">back</div>
-					</div>
-				</article>
-				<article class="scene scene--card">
-					<div class="card">
-						<div class="card__face card__face--front">front</div>
-						<div class="card__face card__face--back">back</div>
-					</div>
-				</article>
-				<article class="scene scene--card">
-					<div class="card">
-						<div class="card__face card__face--front">front</div>
-						<div class="card__face card__face--back">back</div>
-					</div>
-				</article>
-				<article class="scene scene--card">
-					<div class="card">
-						<div class="card__face card__face--front">front</div>
-						<div class="card__face card__face--back">back</div>
-					</div>
-				</article>
-				<article class="scene scene--card">
-					<div class="card">
-						<div class="card__face card__face--front">front</div>
-						<div class="card__face card__face--back">back</div>
-					</div>
-				</article>
 			</section>
 			<section id="chatContainer">
 				<ul id="messages"></ul>
