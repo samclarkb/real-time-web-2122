@@ -18,6 +18,13 @@
 					</div>
 				</article>
 				<%})%>
+				<section>
+					<% (data => {%>
+					<div id="random" style="background-image: url(<%=data.images[0] %>)">
+						<p><%= data.name %></p>
+					</div>
+					<%})%>
+				</section>
 			</section>
 			<section id="chatContainer">
 				<ul id="messages"></ul>

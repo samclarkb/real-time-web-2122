@@ -16,30 +16,28 @@ app.get('/', (req, res) => {
 })
 
 app.get('/chat', (req, res) => {
-	const nickname = req.query.nickname
-	fetch(`https://naruto-api.herokuapp.com/api/v1/characters`)
+	const nickname = req.query.nickname // refers to the input field where the user sets his nickname
+	fetch(`https://naruto-api.herokuapp.com/api/v1/characters`) // external API
 		.then(res => res.json())
 		.then(data => {
 			res.render('chat', {
-				nickname,
-				data: names(data).slice(18, 39),
+				nickname, // renders the the nickname of the user
+				data: names(data).slice(24, 38), // fetching 14 characters, starting with character 24 and endning with the 38th
 			})
 		})
 })
 
 const names = data => {
 	const filterdNames = data.map(item => {
-		console.log('name', item.name)
 		return {
 			...item, // spread entire object
-			name: item.name.replace('_', ' '),
+			name: item.name.replace('_', ' '), // Cleaning the names of the characters, removing underscore
 		}
 	})
 	return filterdNames
 }
 
 io.on('connection', socket => {
-	// console.log(socket.nickname, 'lol')
 	io.emit('connected', 'a user has connected')
 
 	socket.on('typing', function (data) {

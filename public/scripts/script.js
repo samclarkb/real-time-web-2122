@@ -34,10 +34,15 @@ if (window.location.pathname === '/chat') {
 		if (username == data) {
 			return
 		}
-		feedback.innerHTML = data + ' is typing..'
+		feedback.innerHTML = data + ' is typing..' // renders usernamde + is typing.. to every user except the user who is typing
 	})
 
-	console.log(username)
+	socket.on('stop-typing', function () {
+		if (input == '') {
+			return
+		}
+		feedback.innerHTML = ''
+	})
 
 	socket.on('chat-message', msg => {
 		const item = document.createElement('li')
