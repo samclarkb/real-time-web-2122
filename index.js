@@ -21,20 +21,20 @@ app.get('/chat', (req, res) => {
 		.then(res => res.json())
 		.then(data => {
 			res.render('chat', {
-				nickname, // renders the the nickname of the user
-				data: names(data).slice(24, 38), // fetching 14 characters, starting with character 24 and endning with the 38th
+				nickname, // renders the the nickname of the user, so we can display the username in the chatroom
+				data: filteredNames(data).slice(24, 38), // fetching 14 characters, starting with character 24 and endning with the 38th
 			})
 		})
 })
 
-const names = data => {
-	const filterdNames = data.map(item => {
+const filteredNames = data => {
+	const filterNames = data.map(item => {
 		return {
-			...item, // spread entire object
+			...item, // spreading the array of characters to arguments, so I can apply .replace() to the array
 			name: item.name.replace('_', ' '), // Cleaning the names of the characters, removing underscore
 		}
 	})
-	return filterdNames
+	return filterNames
 }
 
 io.on('connection', socket => {
