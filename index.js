@@ -1,8 +1,8 @@
 require('dotenv').config()
 const express = require('express')
 const app = express()
-const http = require('http')
-const server = http.createServer(app)
+const http = require('http') // require HTTP so we can make connection with a server
+const server = http.createServer(app) // create an HTTP server
 const { Server } = require('socket.io')
 const io = new Server(server)
 const fetch = require('node-fetch')
@@ -60,6 +60,7 @@ io.on('connection', socket => {
 	})
 })
 
+// tell the server to listen on port 7000
 server.listen(process.env.PORT, () => {
 	console.log(`listening on *:${process.env.PORT}`)
 })

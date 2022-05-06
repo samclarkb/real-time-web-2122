@@ -8,12 +8,13 @@ const username = new URLSearchParams(window.location.search).get('nickname')
 
 if (window.location.pathname === '/chat') {
 	chatForm.addEventListener('submit', event => {
-		event.preventDefault()
+		event.preventDefault() // prevents the page from reloading
+		// if there is at least one character inside the input field
 		if (input.value) {
 			socket.emit('chat-message', {
-				msg: input.value,
-				nickname: username,
-			})
+				msg: input.value, // refers to what the user has typed in the input field
+				nickname: username, // refers to the user who send the message
+
 			input.value = ''
 		}
 	})
