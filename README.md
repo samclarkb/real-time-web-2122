@@ -39,6 +39,7 @@ Mocht je er zelf wat aan toe willen voegen, neem vooral je tijd!
 
 ## :mag_right: Recources 
 - https://www.youtube.com/watch?v=jD7FnbI76Hg
+- https://socket.io/get-started/chat
 
 ## :bookmark: License 
 Copyright (c) 2021 Sam Clark Boot, [MIT](https://github.com/samclarkb/real-time-web-2122/blob/main/LICENSE)
