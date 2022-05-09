@@ -14,7 +14,7 @@ if (window.location.pathname === '/chat') {
 			socket.emit('chat-message', {
 				msg: input.value, // refers to what the user has typed in the input field
 				nickname: username, // refers to the user who send the message
-
+			})
 			input.value = ''
 		}
 	})
@@ -23,12 +23,16 @@ if (window.location.pathname === '/chat') {
 	input.addEventListener('keyup', function () {
 		const value = input.value
 		if (value && !isUserTyping) {
+			// console.log('test')
 			isUserTyping = true
 			socket.emit('typing', username)
-		} else if (!value && isUserTyping) {
+		} else if (value == '' && isUserTyping) {
+			// console.log('test')
 			isUserTyping = false
-			socket.emit('stop-typing', username)
+			socket.emit('stop-typing', value)
 		}
+
+		// console.log(isUserTyping)
 	})
 
 	socket.on('typing', function (data) {
@@ -38,7 +42,8 @@ if (window.location.pathname === '/chat') {
 		feedback.innerHTML = data + ' is typing..' // renders usernamde + is typing.. to every user except the user who is typing
 	})
 
-	socket.on('stop-typing', function () {
+	socket.on('stop-typing', function (input) {
+		console.log('test')
 		if (input == '') {
 			return
 		}
@@ -53,16 +58,16 @@ if (window.location.pathname === '/chat') {
 		window.scrollTo(0, document.body.scrollHeight)
 	})
 
-	socket.on('connected', msg => {
+	socket.on('connected', () => {
 		const item = document.createElement('li')
-		item.textContent = msg
+		item.textContent = username + ' is connected'
 		messages.appendChild(item)
 		window.scrollTo(0, document.body.scrollHeight)
 	})
 
-	socket.on('disconnected', msg => {
+	socket.on('disconnected', () => {
 		const item = document.createElement('li')
-		item.textContent = msg
+		item.textContent = username + ' disconnected'
 		messages.appendChild(item)
 		window.scrollTo(0, document.body.scrollHeight)
 	})

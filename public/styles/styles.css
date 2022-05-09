@@ -76,6 +76,24 @@ body {
 	flex-wrap: wrap;
 }
 
+#game section:nth-of-type(1) > section {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+#game section:nth-of-type(1) > section h2,
+#game section:nth-of-type(1) > section h4 {
+	margin: 0.25em;
+	padding: 0;
+}
+
+#game section:nth-of-type(1) > section h4 {
+	font-weight: 300;
+	padding-bottom: 1em;
+}
+
 #game {
 	display: flex;
 	/* height: 100vh; */
@@ -123,7 +141,6 @@ body {
 	font-weight: 300;
 	backface-visibility: hidden;
 	border-radius: 1em;
-
 	box-shadow: 0.5em 0.5em 0.25em rgba(0, 0, 0, 0.25);
 }
 
@@ -152,4 +169,14 @@ body {
 #random {
 	width: 2em;
 	height: 4em;
+}
+
+#givenCharacter {
+	width: 12.5em;
+	height: 17.5em;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	border-radius: 1em;
+	position: relative;
 }

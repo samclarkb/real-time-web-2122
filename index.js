@@ -23,9 +23,14 @@ app.get('/chat', (req, res) => {
 			res.render('chat', {
 				nickname, // renders the the nickname of the user, so we can display the username in the chatroom
 				data: filteredNames(data).slice(24, 38), // fetching 14 characters, starting with character 24 and endning with the 38th
+				randomCharacter: randomizer(data.slice(24, 38)),
 			})
 		})
 })
+
+const randomizer = data => {
+	return data[Math.floor(Math.random() * data.length)]
+}
 
 const filteredNames = data => {
 	const filterNames = data.map(item => {
@@ -38,24 +43,26 @@ const filteredNames = data => {
 }
 
 io.on('connection', socket => {
-	io.emit('connected', 'a user has connected')
+	io.emit('connected')
 
-	socket.on('typing', function (data) {
+	socket.on('typing', data => {
 		io.emit('typing', data)
 	})
 
 	socket.on('disconnect', () => {
-		io.emit('disconnected', 'a user has disconnected')
+		io.emit('disconnected')
 	})
 
 	socket.on('send-nickname', nickname => {
 		socket.nickname = nickname
+		// emitting the username to the client
 		io.emit('send-nickname', {
 			nickname: socket.nickname,
 		})
 	})
 
 	socket.on('chat-message', msg => {
+		// emitting chat-message event and the msg object to the client
 		io.emit('chat-message', msg)
 	})
 })
