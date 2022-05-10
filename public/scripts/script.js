@@ -5,6 +5,18 @@ const feedback = document.getElementById('feedback')
 const username = new URLSearchParams(window.location.search).get('nickname')
 var cards = document.querySelectorAll('.card')
 
+const usernameForm = document.querySelector('#nickname')
+const usernameInput = document.querySelector('#nickname-input')
+
+if (window.location.pathname === '/') {
+	usernameForm.addEventListener('submit', () => {
+		const username = usernameInput.value
+		socket.emit('new-user', {
+			username,
+		})
+	})
+}
+
 if (window.location.pathname === '/chat') {
 	chatForm.addEventListener('submit', event => {
 		event.preventDefault() // prevents the page from reloading
