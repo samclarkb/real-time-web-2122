@@ -22,7 +22,7 @@
 
 **Uiterlijk:**
 
-<img src='https://github.com/samclarkb/real-time-web-2122/blob/main/images/appGif.gif' width='750px'/>
+<img src='https://github.com/samclarkb/real-time-web-2122/blob/main/images/appGifje.gif' width='750px'/>
 
 ## :satellite: Socket
 Socket.io (websockets) komen goed van pas wanneer je een real time app wil maken. In sommige gevallen wil je dat er data wordt ingeladen zonder dat de gebruiker de pagina herlaadt. Denk bijvoorbeeld aan whatsapp en Facetime. Socket.io kan ervoor zorgen dat client een 101 (switching protocols, TCP/IP) verbinding maakt met de server. Deze verbinding zorgt ervoor dat er data met erg weinige vertraging verstuurd kan worden.
