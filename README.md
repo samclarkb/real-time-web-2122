@@ -4,6 +4,7 @@
 * [Assesment](https://github.com/samclarkb/real-time-web-2122#books-assessment)
 * [Concept](https://github.com/samclarkb/real-time-web-2122#bulb-concept)
 * [Process](https://github.com/samclarkb/real-time-web-2122#chart_with_upwards_trend-process)
+* [Data model](https://github.com/samclarkb/real-time-web-2122#file_folder-data-model)
 * [Wishlist](https://github.com/samclarkb/real-time-web-2122#memo-wishlist)
 * [Installation](https://github.com/samclarkb/real-time-web-2122#wrench-installation)
 * [Recources](https://github.com/samclarkb/real-time-web-2122#mag_right-recources)
@@ -22,14 +23,16 @@
 
 ## :chart_with_upwards_trend: Process
 
-geinteresseerd in mijn proces tijdens het maken van dit project? klik [hier](https://github.com/samclarkb/real-time-web-2122/wiki/Process)!
+geinteresseerd in mijn proces tijdens het maken van dit project? klik [hier](https://github.com/samclarkb/real-time-web-2122/wiki/Process)! 
+
+## :file_folder: Data model
 
 
 ## :memo: Wishlist
 Er zijn een paar dingen waar ik niet aan toe ben gekomen, maar graag had willen doen:
-* Enable button function (wel gelukt, maar niet goedgekeurd door Peter Paul)
-* Focus state toevoegen aan de radio buttons
-* Form grootte aanpassen wanneer de CSS is uitgeschakeld
+* Rooms aanmaken 
+* Om de beurt een bericht kunnen versturen 
+* Systeem die de punten bijhoudt
 
 ## :wrench: Installation
 
