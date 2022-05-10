@@ -33,6 +33,7 @@ _Your efforts will be graded using a single point rubric (see below). You will h
 Het concept wat ik heb uitgevoerd is gebasseerd op het spel _Wie ben ik?_. Het is geschreven met Html, CSS en Javascript en met behulp van web sockets zorg ik ervoor dat het spel live gespeeld kan worden.
 
 **Spelregels:**
+De twee spelers krijgen beide een 'spelbord' met daarop een stuk of 20 gezichten (+ naam). Daarna is het de beurt aan de eerste speler om een vraag te stellen over het desbetreffende kaartje. Iedere vraag moet beantwoord worden met ja of nee, dus er kunnen geen open vragen worden gesteld. Een vraag die bijvoorbeeld kan gesteld worden, is: is het een vrouw? Stel dat klopt, dan kan de gebruiker alle gezichten van de mannen dichtklappen en dan ben je weer een stap dichterbij de winst. Daarna mag de andere speler een vraag stellen. Wanneer één van de twee spelers het character van de andere speler invoerd, wordt er _Correct!_ weergegeven.
 
 
 **Uiterlijk:**
