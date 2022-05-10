@@ -40,7 +40,7 @@ body {
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
-	overflow: scroll;
+	/* overflow: scroll; */
 }
 #messages > li {
 	padding: 0.5rem 1rem;
@@ -66,7 +66,11 @@ body {
 
 #chatContainer {
 	width: 30vw;
-	overflow: scroll;
+}
+
+#messages {
+	height: 90vh;
+	overflow-y: scroll;
 }
 
 #game section:nth-of-type(1) {

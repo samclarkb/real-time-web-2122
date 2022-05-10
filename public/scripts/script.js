@@ -35,16 +35,19 @@ if (window.location.pathname === '/chat') {
 			return
 		}
 		feedback.innerHTML = data + ' is typing..' // renders username + is typing.. to every user except the user who is typing
+		feedback.scrollTop = feedback.scrollHeight
 	})
 
 	socket.on('stop-typing', () => {
 		feedback.innerHTML = '' // clear out username is typing..
+		feedback.scrollTop = feedback.scrollHeight
 	})
 
 	socket.on('chat-message', msg => {
 		const item = document.createElement('li') // creates an list item
 		messages.appendChild(item)
 		item.textContent = `${msg.nickname}: ${msg.msg}` // displays the message and the nickname in the just created list item
+		messages.scrollTop = messages.scrollHeight // scrolls to the bottom of the ul, so the most recent message are shown
 	})
 
 	socket.emit('user-connected', username) // emitting the username to the server
@@ -53,12 +56,14 @@ if (window.location.pathname === '/chat') {
 		const item = document.createElement('li') // creates an list item
 		messages.appendChild(item) // appends the new list item to the unordered list
 		item.textContent = username + ' is connected' // Displays who is connected
+		messages.scrollTop = messages.scrollHeight // scrolls to the bottom of the ul, so the most recent message are shown
 	})
 
 	socket.on('user-disconnected', () => {
 		const item = document.createElement('li') // creates an list item
 		messages.appendChild(item) // appends the new list item to the unordered list
 		item.textContent = 'a user has disconnected' // Displays who is disconnected
+		messages.scrollTop = messages.scrollHeight // scrolls to the bottom of the ul, so the most recent message are shown
 	})
 }
 
