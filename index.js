@@ -95,12 +95,12 @@ io.on('connection', socket => {
 		io.emit('chat-message', msg) // emitting chat-message event and the msg object to the client
 		if (
 			array.find(item => {
-				return item.character.toLowerCase().includes(msg.msg.toLowerCase())
+				return item.character.toLowerCase() === msg.msg.toLowerCase()
 			})
 		) {
 			console.log('magic')
 			io.emit('correct')
-			io.emit('chat-message', { msg: 'got em', nickname: 'comp' })
+			io.emit('chat-message', { msg: 'Correct!', nickname: 'computer' })
 		}
 	})
 })
