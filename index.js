@@ -11,37 +11,39 @@ app.set('view engine', 'ejs')
 
 app.use(express.static(__dirname + '/public'))
 
+// Empty variables
 let dataSet = null
 let randomCharacter = null
+let characterAndNicknameArray = []
+let nickname = null
 
 app.get('/', (req, res) => {
-	fetchData() //
+	fetchData() // Declaring the fetch function on the home page
 	res.render('home')
 })
 
+// putting the fetch in a global variable, so the data is globally available
 const fetchData = () => {
 	return fetch(`https://naruto-api.herokuapp.com/api/v1/characters`) // external API
 		.then(res => res.json())
 		.then(data => {
-			randomCharacter = randomizer(data.slice(24, 38))
+			randomCharacter = randomizer(data.slice(24, 38)) // applying the randomizer function to the characters 24 till 38
 			dataSet = {
-				// nickname, // renders the the nickname of the user, so we can display the username in the chatroom
 				data: filteredNames(data).slice(24, 38), // fetching 14 characters, starting with character 24 and endning with the 38th
-				randomCharacter, // applying the randomCharacter function to the characters 24 till 38
+				randomCharacter,
 			}
 		})
 }
 
 const correctAnswer = (character, nickname) => {
-	// array.push({ [nickname]: character.name })
-	array.push({
+	// pushes the name of the character and the nickname into the empty array
+	characterAndNicknameArray.push({
 		character: character.name,
 		name: nickname,
 	})
 }
 
 app.get('/chat', (req, res) => {
-	fetchData()
 	const nickname = req.query.nickname // refers to the input field where the user sets his nickname
 	res.render('chat', { dataSet, nickname })
 })
@@ -49,8 +51,6 @@ app.get('/chat', (req, res) => {
 const randomizer = data => {
 	return data[Math.floor(Math.random() * data.length)] // takes one random object out of the array
 }
-
-let array = []
 
 const filteredNames = data => {
 	// console.log(randomizer(data.slice(24, 38)).name)
@@ -63,19 +63,17 @@ const filteredNames = data => {
 	return filterNames
 }
 
-let nickname = null
-
 io.on('connection', socket => {
 	socket.on('user-connected', username => {
 		io.emit('user-connected', username)
 	})
 
 	socket.on('new-user', user => {
-		nickname = user.username
+		nickname = user.username // getting the username of the Client
 		if (randomCharacter) {
 			correctAnswer(randomCharacter, nickname)
 		}
-		console.log(array)
+		console.log(characterAndNicknameArray) // logging the username + the character of an specific user
 	})
 
 	socket.on('disconnect', () => {
@@ -91,17 +89,16 @@ io.on('connection', socket => {
 	})
 
 	socket.on('chat-message', msg => {
-		console.log(array)
-		io.emit('chat-message', msg) // emitting chat-message event and the msg object to the client
+		// search within the array variable if character.name is equal to the message. If so, correct will be displayed in the chat room.
+		// character refers to character.name within the characterAndNicknameArray array
 		if (
-			array.find(item => {
-				return item.character.toLowerCase() === msg.msg.toLowerCase()
+			characterAndNicknameArray.find(item => {
+				return item.character === msg.msg // Checks if the user filled in the correct character as answer
 			})
 		) {
-			console.log('magic')
-			io.emit('correct')
-			io.emit('chat-message', { msg: 'Correct!', nickname: 'computer' })
+			io.emit('chat-message', { nickname: 'Computer', msg: 'Correct!' }) // Displays Computer: correct! when a user guesses the right answer
 		}
+		io.emit('chat-message', msg) // emitting chat-message event and the msg object to the client
 	})
 })
 

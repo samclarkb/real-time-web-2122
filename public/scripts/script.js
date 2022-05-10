@@ -9,8 +9,10 @@ const usernameForm = document.querySelector('#nickname')
 const usernameInput = document.querySelector('#nickname-input')
 
 if (window.location.pathname === '/') {
+	// Listen tot the submit event
 	usernameForm.addEventListener('submit', () => {
 		const username = usernameInput.value
+		// Emits the username of the new user to the server
 		socket.emit('new-user', {
 			username,
 		})
