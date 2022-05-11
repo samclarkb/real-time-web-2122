@@ -5,6 +5,7 @@
 * [Concept](https://github.com/samclarkb/real-time-web-2122#bulb-concept)
 * [Socket](https://github.com/samclarkb/real-time-web-2122#satellite-Socket)
 * [Process](https://github.com/samclarkb/real-time-web-2122#chart_with_upwards_trend-process)
+* [API](https://github.com/samclarkb/real-time-web-2122#repeat-API)
 * [Data model](https://github.com/samclarkb/real-time-web-2122#file_folder-data-model)
 * [Wishlist](https://github.com/samclarkb/real-time-web-2122#memo-wishlist)
 * [Installation](https://github.com/samclarkb/real-time-web-2122#wrench-installation)
@@ -50,6 +51,9 @@ Socket.io (websockets) komen goed van pas wanneer je een real time app wil maken
 ## :chart_with_upwards_trend: Process
 
 geinteresseerd in mijn proces tijdens het maken van dit project? klik [hier](https://github.com/samclarkb/real-time-web-2122/wiki/Process)! 
+
+## :repeat: API
+Ik gebruik de naruto-api om de gegevens van de characters op te halen. Door middel van een fetch haal ik de naam en de afbeelding op van een specifiek character. Link API: https://naruto-api.herokuapp.com/api/v1/characters
 
 ## :file_folder: Data model
 
