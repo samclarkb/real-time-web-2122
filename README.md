@@ -3,6 +3,7 @@
 ## Table of Contents 
 * [Assesment](https://github.com/samclarkb/real-time-web-2122#books-assessment)
 * [Concept](https://github.com/samclarkb/real-time-web-2122#bulb-concept)
+* [Features](https://github.com/samclarkb/real-time-web-2122#clipboard-Features)
 * [Socket](https://github.com/samclarkb/real-time-web-2122#satellite-Socket)
 * [Process](https://github.com/samclarkb/real-time-web-2122#chart_with_upwards_trend-process)
 * [API](https://github.com/samclarkb/real-time-web-2122#repeat-API)
@@ -41,6 +42,14 @@ De twee spelers krijgen beide een 'spelbord' met daarop een stuk of 20 gezichten
 **Uiterlijk:**
 
 <img src='https://github.com/samclarkb/real-time-web-2122/blob/main/images/appGifje.gif' width='750px'/>
+
+## :clipboard: Features
+- Send a message
+- Set a username
+- Users sees who is typing 
+- Users sees who is connected
+- Flip a character 180deg when the user makes sure its not the answer
+- App gaves feedback when the user guesses the correct answer
 
 ## :satellite: Socket
 Socket.io (websockets) komen goed van pas wanneer je een real time app wil maken. In sommige gevallen wil je dat er data wordt ingeladen zonder dat de gebruiker de pagina herlaadt. Denk bijvoorbeeld aan whatsapp en Facetime. Socket.io kan ervoor zorgen dat client een 101 (switching protocols, TCP/IP) verbinding maakt met de server. Deze verbinding zorgt ervoor dat er data met erg weinige vertraging verstuurd kan worden.
