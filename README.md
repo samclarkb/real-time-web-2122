@@ -69,7 +69,7 @@ Ik gebruik de naruto-api om de gegevens van de characters op te halen. Door midd
 <img src='https://github.com/samclarkb/real-time-web-2122/blob/main/images/dataModel1.0.png' width='500px'/>
 
 ## :recycle: Data lifecycle 
-<img src='https://github.com/samclarkb/real-time-web-2122/blob/main/images/datalifecycle.png' width='500px'/>
+<img src='https://github.com/samclarkb/real-time-web-2122/blob/main/images/dataLifecycle.png' width='500px'/>
 
 ## :memo: Wishlist
 Er zijn een paar dingen waar ik niet aan toe ben gekomen, maar graag had willen doen:
