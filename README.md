@@ -7,7 +7,8 @@
 * [Socket](https://github.com/samclarkb/real-time-web-2122#satellite-Socket)
 * [Process](https://github.com/samclarkb/real-time-web-2122#chart_with_upwards_trend-process)
 * [API](https://github.com/samclarkb/real-time-web-2122#repeat-API)
-* [Data model](https://github.com/samclarkb/real-time-web-2122#file_folder-data-model)
+* [Data model](https://github.com/samclarkb/real-time-web-2122#file_folder-Data-model)
+* [Data lifecycle](https://github.com/samclarkb/real-time-web-2122#recycle-Data-lifecycle)
 * [Wishlist](https://github.com/samclarkb/real-time-web-2122#memo-wishlist)
 * [Installation](https://github.com/samclarkb/real-time-web-2122#wrench-installation)
 * [Recources](https://github.com/samclarkb/real-time-web-2122#mag_right-recources)
@@ -66,6 +67,9 @@ Ik gebruik de naruto-api om de gegevens van de characters op te halen. Door midd
 
 ## :file_folder: Data model
 <img src='https://github.com/samclarkb/real-time-web-2122/blob/main/images/dataModel1.0.png' width='500px'/>
+
+## :recycle: Data lifecycle 
+<img src='https://github.com/samclarkb/real-time-web-2122/blob/main/images/datalifecycle.png' width='500px'/>
 
 ## :memo: Wishlist
 Er zijn een paar dingen waar ik niet aan toe ben gekomen, maar graag had willen doen:
