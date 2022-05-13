@@ -53,7 +53,6 @@ const randomizer = data => {
 }
 
 const filteredNames = data => {
-	// console.log(randomizer(data.slice(24, 38)).name)
 	const filterNames = data.map(item => {
 		return {
 			...item, // spreading the array of characters to arguments, so I can apply .replace() to the array
@@ -70,6 +69,7 @@ io.on('connection', socket => {
 
 	socket.on('new-user', user => {
 		nickname = user.username // getting the username of the Client
+		//
 		if (randomCharacter) {
 			correctAnswer(randomCharacter, nickname)
 		}
