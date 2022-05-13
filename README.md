@@ -65,7 +65,7 @@ geinteresseerd in mijn proces tijdens het maken van dit project? klik [hier](htt
 Ik gebruik de naruto-api om de gegevens van de characters op te halen. Door middel van een fetch haal ik de naam en de afbeelding op van een specifiek character. Link API: https://naruto-api.herokuapp.com/api/v1/characters
 
 ## :file_folder: Data model
-<img src='https://github.com/samclarkb/real-time-web-2122/blob/main/images/dataModel1.0.png' width='750px'/>
+<img src='https://github.com/samclarkb/real-time-web-2122/blob/main/images/dataModel1.0.png' width='500px'/>
 
 ## :memo: Wishlist
 Er zijn een paar dingen waar ik niet aan toe ben gekomen, maar graag had willen doen:
